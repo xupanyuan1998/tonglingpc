@@ -1,0 +1,33 @@
+.pageComponent {
+  .pagess{
+    background: #fff;
+    border: none;
+  }
+  button{
+    margin: 0 5px;
+    background-color: #ebebeb;
+    color: #444444;
+    outline:none;
+    border-radius: 2px;
+    padding: 0 4px;
+    vertical-align: top;
+    display: inline-block;
+    font-size: 16px;
+    min-width: 35.5px;
+    height: 28px;
+    line-height: 28px;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    border: 0;
+    &[disabled]{
+      color: #444;
+      cursor: not-allowed;
+    }
+    &.active{
+      cursor: not-allowed;
+      background:#E7390A;
+      color: #fff;
+    }
+  }
+}

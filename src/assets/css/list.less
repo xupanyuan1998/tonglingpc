@@ -1,0 +1,131 @@
+.container {
+  width: 100%;
+  margin-top: 20px;
+  .nav {
+    width: 1200px;
+    height: 40px;
+    margin: 0 auto;
+    background: #fff;
+    span {
+      display: block;
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(102, 102, 102, 1);
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    b {
+      display: block;
+      float: left;
+      height: 32px;
+      line-height: 32px;
+      margin-right: 10px;
+    }
+  }
+  .line{
+    width: 1200px;
+    height: 4px;
+    margin: 0 auto;
+    background: url("../../../static/images/line.png") repeat-x;
+  }
+}
+.addlist{
+  width: 949px;
+  min-height: 780px;
+  margin: 30px 0;
+  li{
+    height: 39px;
+    line-height: 39px;
+    overflow: hidden;
+    b{
+      display: block;
+      float: left;
+      margin: 13px 10px 13px 6px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 4px 0 4px 4px;
+      border-color: transparent transparent transparent #e53509;
+    }
+    a{
+      font-size: 16px;
+      display: block;
+      float: left;
+      height: 39px;
+      line-height: 39px;
+      max-width: 800px;
+      overflow: hidden;
+      margin-right: 7px;
+      overflow: hidden;
+      text-overflow:ellipsis;/* 超出部分显示省略号 */
+      white-space: nowrap;/*规定段落中的文本不进行换行 */
+      i{
+        display: block;
+        float: left;
+        width:32px;
+        height:16px;
+        line-height: 16px;
+        background:rgba(229,53,9,1);
+        border-radius:2px;
+        font-size:12px;
+        font-weight:400;
+        color:rgba(255,255,255,1);
+        text-align: center;
+        margin-top: 7px;
+        margin-left: 5px;
+      }
+    }
+    p{
+      float: left;
+      margin-left: 96px;
+      height: 39px;
+      strong{
+        cursor: pointer;
+        display: block;
+        float: left;
+        width: 15px;
+        height: 15px;
+        background: url("../../../static/images/download.png");
+        margin: 10px;
+      }
+      img {
+        cursor: pointer;
+        display: block;
+        float: left;
+        margin: 10px 0;
+      }
+    }
+    span{
+      display: block;
+      float: right;
+      height: 39px;
+      line-height: 39px;
+      font-size: 16px;
+      color: #bdbdbd;
+    }
+    em{
+      float: left;
+      color: #454545;
+      margin-right: 20px;
+      height: 39px;
+      line-height: 39px;
+      font-size: 16px;
+    }
+  }
+  li:last-child{
+    border-bottom: none;
+  }
+  .five{
+    border-bottom: 1px dashed #c5c5c5;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+  li:hover{
+    a{
+      color: #e7390a;
+    }
+  }
+}
