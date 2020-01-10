@@ -4,11 +4,11 @@
       <div class="renzBot">
         <!-- 您的个人信息已通过认证 -->
        <div class="place">
-         <p v-if="personal.authenticationState==1"><img src="../../../../static/images/132.png" alt=""><span>您的个人信息已通过认证</span></p>
-         <p v-if="personal.authenticationState==0"><img src="../../../../static/images/119.png" alt=""><span>欢迎进行企业法人身份认证</span></p>
+         <p v-if="personal.authenticationState==2"><img src="../../../../static/images/132.png" alt=""><span>您的个人信息已通过认证</span></p>
+         <p v-if="personal.authenticationState==1"><img src="../../../../static/images/119.png" alt=""><span>欢迎进行企业法人身份认证</span></p>
        </div>
         <!-- 欢迎进行个人身份认证 -->
-        <div v-if="personal.authenticationState==1"  class="msg">
+        <div v-if="personal.authenticationState==2"  class="msg">
           <ul>
             <li><span>手机号码&nbsp;:</span><b>{{personal.mobile}}</b></li>
             <li><span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;:</span><b>{{personal.realName}}</b></li>
@@ -16,7 +16,7 @@
             <li><span>认证时间&nbsp;:</span><b>{{personal.authenticationTime}}</b></li>
           </ul>
         </div>
-        <div v-if="personal.authenticationState==0" class="msg" @click="place">
+        <div v-if="personal.authenticationState==1" class="msg" @click="place">
           <ul>
             <li><span>手&nbsp;机&nbsp;号&nbsp;码&nbsp;：</span><b>{{personal.mobile}}</b></li>
             <li><span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名&nbsp;：</span><b>{{personal.realName}}</b></li>
@@ -81,18 +81,20 @@ export default {
     },
       //提交认证法人
       saveren(){
+        let that=this;
         if(this.code==''){
             $("#yanphone").css({ 'display': "block" });
         }else{
             this.axios.post('/web/user/web/authentication',{mobile:this.personal.mobile,code:this.code}).then((res)=>{
                 if(res.data.code==10001){
                     localStorage.setItem("personal", JSON.stringify(res.data.data));
+                    console.log(res.data.data);
                   this.placeshow=true;
                   this.success=3;
                   this.plas='恭喜你认证成功';
                     setTimeout(function () {
-                      this.placeshow=false;
-                        window.location.reload();
+                      that.placeshow=false;
+                     window.location.reload();
                     },2000)
                 }else if(res.data.code==500){
                   this.placeshow=true;

@@ -71,7 +71,7 @@
                     <h5 v-if="personal.authenticationState==0&&personal.roleId==0">
                       <b v-if="personal.authenticationState==0&&personal.roleId==0">
                         <span>您有一个法人账户未实名认证,</span>
-                        <router-link tag="a" to="/personal/faren">请处理</router-link>
+                        <router-link tag="a" :to="{name:'personal', params:{data:'faren'}}">请处理</router-link>
                       </b>
                     </h5>
                   </div>
@@ -81,7 +81,7 @@
                   <b @click="linkzhong">更多>></b>
                 </h4>
                 <ul  v-if="personal.roleId==1">
-                  <li v-for="(item,idx) in recommendVoList">
+                  <li v-for="(item,idx) in recommendVoList" :key="idx">
                     <a href="javascript:;" @click="gotui(item)">{{item.title}}</a>
                     <span>{{clearFen(item.publishTime)}}</span>
                   </li>

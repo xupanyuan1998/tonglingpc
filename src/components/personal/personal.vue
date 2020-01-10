@@ -190,63 +190,122 @@
             var a = localStorage.getItem("personal");
             this.msg = JSON.parse(a);
             this.userId=this.msg.userId;
-          if(this.$route.name=='faren'){
-            this.$router.push('/personal/faren');
-            this.mymsg[0].active=true;
-          }else{
-            if (this.msg.roleId == 0) {
-              this.online=[],
-                this.server = [];
-              this.mymsg[1].active=true;
-              this.$router.push('/personal/setpassword')
-            } else if (this.msg.roleId == 1) {
-              this. online=[
-                {
-                  src: "../../../static/images/181.png",
-                  activeSrc:'../../../static/images/188.png',
-                  name: "重点政策推荐",
-                  active: false
-                },{
-                  src: "../../../static/images/189.png",
-                  activeSrc:'../../../static/images/196.png',
-                  name: "经验推荐",
-                  active: false
-                },
-                {
-                  src: "../../../static/images/182.png",
-                  activeSrc:'../../../static/images/190.png',
-                  name: "信息之窗",
-                  active: false
-                },
-              ],
-                this.server = [
-                  //企业服务
+            let fa=this.$route.params.data;
+              if (this.msg.roleId == 0) {
+                this.online=[],
+                  this.server = [];
+                  if(fa=='faren'){
+                  this.mymsg[0].active=true;
+                  this.$router.push('/personal/faren')
+                  }else{
+                    this.mymsg[1].active=true;
+                  this.$router.push('/personal/setpassword')
+                  }
+                
+              } else if (this.msg.roleId == 1) {
+                this. online=[
                   {
-                    src: "../../../static/images/183.png",
-                    activeSrc:'../../../static/images/191.png',
-                    name: "产品管理",
+                    src: "../../../static/images/181.png",
+                    activeSrc:'../../../static/images/188.png',
+                    name: "重点政策推荐",
+                    active: false
+                  },{
+                    src: "../../../static/images/189.png",
+                    activeSrc:'../../../static/images/196.png',
+                    name: "经验推荐",
                     active: false
                   },
                   {
-                    src: "../../../static/images/184.png",
-                    activeSrc:'../../../static/images/192.png',
-                    name: "供需发布",
+                    src: "../../../static/images/182.png",
+                    activeSrc:'../../../static/images/190.png',
+                    name: "信息之窗",
                     active: false
                   },
-                  {
-                    src: "../../../static/images/185.png",
-                    activeSrc:'../../../static/images/197.png',
-                    name: "企业资质",
-                    active: false
-                  },
+                ],
+                  this.server = [
+                    //企业服务
+                    {
+                      src: "../../../static/images/183.png",
+                      activeSrc:'../../../static/images/191.png',
+                      name: "产品管理",
+                      active: false
+                    },
+                    {
+                      src: "../../../static/images/184.png",
+                      activeSrc:'../../../static/images/192.png',
+                      name: "供需发布",
+                      active: false
+                    },
+                    {
+                      src: "../../../static/images/185.png",
+                      activeSrc:'../../../static/images/197.png',
+                      name: "企业资质",
+                      active: false
+                    },
 
+                  ];
+                  if(fa=='faren'){
+                  this.mymsg[0].active=true;
+                  this.$router.push('/personal/faren')
+                  }else{
+                    this.online[0].active=true;
+                this.$router.push('/personal/importanttuijian');
+                  }
+              } else if (this.msg.roleId == 2) {
+                (this.online = [
+                ]),
+                  this.server=[],
+                  this.mymsg = [
+                    {
+                      src: "../../../static/images/187.png",
+                      activeSrc:'../../../static/images/195.png',
+                      name: "修改密码",
+                      active: false
+                    }
+                  ];
+                this.mymsg[0].active=true;
+                this.$router.push('/personal/setpassword');
+              }else if( this.msg.roleId == 3){
+                this.online = [];
+                this.shuju=[
+                  {
+                    src: "../../../static/images/199.png",
+                    activeSrc:'../../../static/images/200.png',
+                    name: "企业建档统计",
+                    active: false
+                  },
+                  {
+                    src: "../../../static/images/201.png",
+                    activeSrc:'../../../static/images/202.png',
+                    name: "企业活跃统计",
+                    active: false
+                  },
+                  {
+                    src: "../../../static/images/204.png",
+                    activeSrc:'../../../static/images/203.png',
+                    name: "网站内容统计",
+                    active: false
+                  },
+                  {
+                    src: "../../../static/images/205.png",
+                    activeSrc:'../../../static/images/206.png',
+                    name: "政策发布效果统计",
+                    active: false
+                  },
+                  {
+                    src: "../../../static/images/207.png",
+                    activeSrc:'../../../static/images/208.png',
+                    name: "为企服务评分统计",
+                    active: false
+                  },
+                  {
+                    src: "../../../static/images/232.png",
+                    activeSrc:'../../../static/images/231.png',
+                    name: "注册资金统计",
+                    active: false
+                  }
                 ];
-              this.online[0].active=true;
-              this.$router.push('/personal/importanttuijian');
-            } else if (this.msg.roleId == 2) {
-              (this.online = [
-              ]),
-                this.server=[],
+                this.server=[];
                 this.mymsg = [
                   {
                     src: "../../../static/images/187.png",
@@ -255,62 +314,10 @@
                     active: false
                   }
                 ];
-              this.mymsg[0].active=true;
-              this.$router.push('/personal/setpassword');
-            }else if( this.msg.roleId == 3){
-              this.online = [];
-              this.shuju=[
-                {
-                  src: "../../../static/images/199.png",
-                  activeSrc:'../../../static/images/200.png',
-                  name: "企业建档统计",
-                  active: false
-                },
-                {
-                  src: "../../../static/images/201.png",
-                  activeSrc:'../../../static/images/202.png',
-                  name: "企业活跃统计",
-                  active: false
-                },
-                {
-                  src: "../../../static/images/204.png",
-                  activeSrc:'../../../static/images/203.png',
-                  name: "网站内容统计",
-                  active: false
-                },
-                {
-                  src: "../../../static/images/205.png",
-                  activeSrc:'../../../static/images/206.png',
-                  name: "政策发布效果统计",
-                  active: false
-                },
-                {
-                  src: "../../../static/images/207.png",
-                  activeSrc:'../../../static/images/208.png',
-                  name: "为企服务评分统计",
-                  active: false
-                },
-                {
-                  src: "../../../static/images/232.png",
-                  activeSrc:'../../../static/images/231.png',
-                  name: "注册资金统计",
-                  active: false
-                }
-              ];
-              this.server=[];
-              this.mymsg = [
-                {
-                  src: "../../../static/images/187.png",
-                  activeSrc:'../../../static/images/195.png',
-                  name: "修改密码",
-                  active: false
-                }
-              ];
-              this.shuju[0].active=true;
-              this.$router.push('/personal/tableJd')
-            }
-          }
-
+                this.shuju[0].active=true;
+                this.$router.push('/personal/tableJd')
+              }
+              
         },
         beforeCreate(){
             this.token = localStorage.getItem("token");
