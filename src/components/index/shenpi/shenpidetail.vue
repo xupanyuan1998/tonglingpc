@@ -193,7 +193,7 @@
               this.$http.post('/web/onlinework/file', formData, config).then(function (res) {
                   that.fujian.name=res.data.data.name;
                   that.fujian.url=res.data.data.url;
-                  that.$refs.addtu.value = null;
+                  that.$refs.addtu.value = '';
               })
           }else{
               return false;
