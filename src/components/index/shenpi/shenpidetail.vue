@@ -165,22 +165,39 @@
         return i.substr(0, i.indexOf(" "));
       },
       addtu(e){//提交文件
-        let formData = new FormData();
-        let file=e.target.files[ 0 ];
-        if(file!=undefined){
-          formData.append("img",file);
-          let config = {
-            headers: {
-              'Content-Type': 'multipart/form-data'
-            }
-          };
           var that=this;
-          this.$http.post('/web/onlinework/file', formData, config).then(function (res) {
-            that.fujian.name=res.data.data.name;
-            that.fujian.url=res.data.data.url;
-            that.$refs.addtu.value = null;
-          })
-        }
+          let formData = new FormData();
+          let file=e.target.files[ 0 ];
+          var fileSize = 0;
+          var fileMaxSize = 10240;//10M
+          if(file!=undefined){
+              fileSize =file.size;
+              var size = fileSize / 1024;
+              if (size > fileMaxSize) {
+                  this.placeshow=true;
+                  this.success=5;
+                  this.plas='文件大小不能超过10MB';
+                  return false;
+              }else if (size <= 0) {
+                  this.placeshow=true;
+                  this.success=5;
+                  this.plas='文件大小不能低于0MB'
+                  return false;
+              }
+              formData.append("img",file);
+              let config = {
+                  headers: {
+                      'Content-Type': 'multipart/form-data'
+                  }
+              };
+              this.$http.post('/web/onlinework/file', formData, config).then(function (res) {
+                  that.fujian.name=res.data.data.name;
+                  that.fujian.url=res.data.data.url;
+                  that.$refs.addtu.value = null;
+              })
+          }else{
+              return false;
+          }
       },
       saveques(){
           let that=this;
