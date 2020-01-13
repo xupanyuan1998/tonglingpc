@@ -176,12 +176,12 @@
               if (size > fileMaxSize) {
                   this.placeshow=true;
                   this.success=5;
-                  this.plas='文件大小不能超过10MB';
+                  this.errorshow='文件大小不能超过10MB';
                   return false;
               }else if (size <= 0) {
                   this.placeshow=true;
                   this.success=5;
-                  this.plas='文件大小不能低于0MB'
+                  this.errorshow='文件大小不能低于0MB'
                   return false;
               }
               formData.append("img",file);
