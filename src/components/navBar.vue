@@ -2,7 +2,7 @@
     <div>
       <div class="nav">
         <ul class="naBar">
-          <li class="mo" v-for="(item,idx) in nav" @click="goIndex(idx)" :class="cNav==idx?'navClect':''" @mouseenter="twomenu"  @mouseleave="hidemenu">
+          <li class="mo" v-for="(item,idx) in nav" @click="goIndex(idx)" :key="idx" :class="cNav==idx?'navClect':''" @mouseenter="twomenu"  @mouseleave="hidemenu">
             <span >{{item.name}}</span>
             <ul style="display:none" v-if="item.list.length>0" @click.stop="cancle">
               <li class="sanjiao"></li>
@@ -40,16 +40,10 @@
                 {name:'在线诉求',list:[]},
                 {name:'办事导航',list:[]},
                 {name:'金融超市',list:[]},
-                {name:'涉企服务',list:[
-                    {name:'四送一服',url:'http://www.ah.gov.cn/zwyw/ztzl/ssyfsqgc/index.html'},
-                    {name:'法律服务',url:'/falv'},
-                    {name:'环评服务',url:''},
-                    {name:'能评服务',url:''},
-                    {name:'中介服务',url:'/Corporation/Corporationlist',id:27},
-                    {name:'技术服务',url:'/Corporation/Corporationlist',id:28},
-                  ]},
+                {name:'涉企服务',list:[]},
                 {name:'民企风采',list:[]},
                 {name:'求计问策',list:[]},
+                  {name:'联系帮扶',list:[]},
               ],
                 navClect:"",
               status:'',
@@ -116,12 +110,12 @@
               this.$router.push('/chaoshi')
             }
             if(id==5){
-
+              this.$router.push('/services')
             }
           if(id==6){
             this.$router.push('/Corporation')
           }
-            if(id==7){
+          if(id==7){
               if(this.status==null){
                 this.placeshow=true;
               }else{
@@ -130,6 +124,9 @@
                 });
               }
             }
+          if(id==8){
+              this.$router.push('/telhelp')
+          }
         },
         enter(){
             $('#navList').css({display:'block'});
@@ -217,12 +214,13 @@
     overflow: hidden;
     li.mo{
       float: left;
-      width:150px;
+      width:132px;
       line-height: 42px;
       cursor: pointer;
+      transition: all 0.5s;
       span{
         display: block;
-        width:150px;
+        width:100%;
         height:42px;
         text-align: center;
         line-height: 42px;
@@ -231,7 +229,7 @@
         color:#ffffff;
       }
       ul{
-        width:148px;
+        width:100%;
         position: relative;
         z-index: 999;
         background: #fff;
@@ -247,9 +245,10 @@
           left: 5px;
         }
         li{
-          width:148px;
+          width:100%;
           text-align: center;
           font-size: 18px;
+          transition: all 0.3s;
         }
         li:hover{
           background:  #e7390a;

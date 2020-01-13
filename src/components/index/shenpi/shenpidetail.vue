@@ -42,7 +42,6 @@
               </div>
             </div>
             <div class="navs">
-
               <div class="t_l">
                 <span>标题</span><b>*</b>
               </div>
@@ -184,6 +183,7 @@
         }
       },
       saveques(){
+          let that=this;
         $('#titot2').css({display:'none'});
         $('#titot3').css({display:'none'});
         $('#titot1').css({display:'none'});
@@ -202,10 +202,10 @@
               approvalId: this.infoId,
               attachment: this.fujian.url,
               attachmentName: this.fujian.name,
-              title: this.titlename,
-              content: this.contents,
-              operatorName: this.title,
-              departmentName: this.names
+              title: this.titlename,//标题
+              content: this.contents,//备注
+              operatorName: this.title,//添加人员
+              departmentName: this.names//
             }
           }).then(({data}) => {
             if (data.code == 10001) {
@@ -213,12 +213,16 @@
               this.success=3;
               this.succmsg='提交成功';
               setTimeout(function () {
-                this.placeshow=false;
+                that.placeshow=false;
                 window.location.reload();
               },2000)
             } else {
               this.placeshow=true;
+              this.success=5;
               this.errorshow=data.msg;
+                setTimeout(function () {
+                    that.placeshow=false;
+                },2000)
             }
           })
         }

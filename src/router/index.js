@@ -195,11 +195,151 @@ export default new Router({
       name: "bank",
       component:() => import('@/components/index/supermarket/bank')
     },//金融超市
+      {
+        path: "/services",
+        name: "services",
+        component:() => import('@/components/index/supermarket/services')
+      },//涉企服务
+    {
+      path: "/baoc",
+      name: "bhaoc",
+      component:() => import('@/components/index/supermarket/baoc')
+    },//保险公司详情
+    {
+      path: "/guoyuan",
+      name: "guoyuan",
+      component:() => import('@/components/index/supermarket/guoyuan')
+    },//国元保险详情
+    {
+      path: "/company",
+      name: "company",
+      component:() => import('@/components/index/supermarket/company')
+    },//公司详情
+    {
+      path: "/anhua",
+      name: "anhua",
+      component:() => import('@/components/index/supermarket/anhua')
+    },//安华基金
+    {
+      path: "/anyuan",
+      name: "anyuan",
+      component:() => import('@/components/index/supermarket/anyuan')
+    },//安元基金
+    {
+      path: "/tongl",
+      name: "tongl",
+      component:() => import('@/components/index/supermarket/tongl')
+    },//铜陵市担保控股集团有限公司详情
+    {
+      path: "/andan",
+      name: "andan",
+      component:() => import('@/components/index/supermarket/andan')
+    },//安徽信用担保
+    {
+      path: "/yongchang",
+      name: "yongchang",
+      component:() => import('@/components/index/supermarket/yongchang')
+    },//铜陵永昌会计师事务所
+    {
+      path: "/dongfang",
+      name: "dongfang",
+      component:() => import('@/components/index/supermarket/dongfang')
+    },//铜陵东方会计师事务所
+    {
+      path: "/daqian",
+      name: "daqian",
+      component:() => import('@/components/index/supermarket/daqian')
+    },//铜陵大潜律师事务所
+    {
+      path: "/zhonghai",
+      name: "zhonghai",
+      component:() => import('@/components/index/supermarket/zhonghai')
+    },//中海
+    {
+      path: "/nanda",
+      name: "nanda",
+      component:() => import('@/components/index/supermarket/nanda')
+    },//南大
+    {
+      path: "/jinyuan",
+      name: "jinyuan",
+      component:() => import('@/components/index/supermarket/jinyuan')
+    },//金元
+    {
+      path: "/ruide",
+      name: "ruide",
+      component:() => import('@/components/index/supermarket/ruide')
+    },//瑞德
+    {
+      path: "/changjiang",
+      name: "changjiang",
+      component:() => import('@/components/index/supermarket/changjiang')
+    },//长江
+    {
+      path: "/taixiang",
+      name: "taixiang",
+      component:() => import('@/components/index/supermarket/taixiang')
+    },//泰祥
+    {
+      path: "/fengrui",
+      name: "fengrui",
+      component:() => import('@/components/index/supermarket/fengrui')
+    },//丰瑞
+    {
+      path: "/ailide",
+      name: "ailide",
+      component:() => import('@/components/index/supermarket/ailide')
+    },//爱立德
+    {
+      path: "/dong",
+      name: "dong",
+      component:() => import('@/components/index/supermarket/dong')
+    },//东方
+    {
+      path: "/lan",
+      name: "lan",
+      component:() => import('@/components/index/supermarket/lan')
+    },//蓝天
+    {
+      path: "/shun",
+      name: "shun",
+      component:() => import('@/components/index/supermarket/shun')
+    },//顺为
+    {
+      path: "/fu",
+      name: "fu",
+      component:() => import('@/components/index/supermarket/fu')
+    },//富达
+    {
+      path: "/jili",
+      name: "jili",
+      component:() => import('@/components/index/supermarket/jili')
+    },//积利金
+    {
+      path: "/waihui",
+      name: "waihui",
+      component:() => import('@/components/index/supermarket/waihui')
+    },//外汇宝
+    {
+      path: "/sisone",
+      name: "sisone",
+      component:() => import('@/components/index/supermarket/sisone')
+    },//四送一服
     {
       path: "/tellme",
       name: "tellme",
       component:() => import('@/components/index/tellme/tellme')
     },//关于我们
+    {
+      path: "/telhelp",
+      name: "telhelp",
+      component:() => import('@/components/index/telhelp/telhelp')
+    },//联系帮扶
+    {
+      path: "/telhelpdetail",
+      name: "telhelpdetail",
+      component:() => import('@/components/index/telhelp/telhelpdetail')
+    },//联系帮扶详情
     {
       path: "/personal",
       name: "personal",
@@ -210,6 +350,16 @@ export default new Router({
           name: 'faren',
           component:() => import('@/components/mineCenter/personr/shenren')
         },//身份认证
+        {
+          path: 'myshenpi',//以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'myshenpi',
+          component:() => import('@/components/mineCenter/shenpi/shenpi')
+        },//审批列表
+        {
+          path: 'myshenpint',//以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'myshenpiint',
+          component:() => import('@/components/mineCenter/shenpi/myshenpiint')
+        },//审批列表详情
         {
           path: 'supplypublic',//以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
           name: 'supplypublic',

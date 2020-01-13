@@ -68,8 +68,8 @@
                         <button class="outs" @click="logout">退出</button>
                       </div>
                     </div>
-                    <h5 v-if="personal.authenticationState==0&&personal.roleId==0">
-                      <b v-if="personal.authenticationState==0&&personal.roleId==0">
+                    <h5 v-if="personal.authenticationState==0&&personal.roleId==1">
+                      <b v-if="personal.authenticationState==0&&personal.roleId==1">
                         <span>您有一个法人账户未实名认证,</span>
                         <router-link tag="a" :to="{name:'personal', params:{data:'faren'}}">请处理</router-link>
                       </b>
