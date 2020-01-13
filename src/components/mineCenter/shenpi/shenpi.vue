@@ -9,18 +9,13 @@
           <el-table-column prop="title" label="标题" show-overflow-tooltip>
             <template slot-scope="scope">
               <div class="goclick" >
-                {{scope.row.title.length>28?scope.row.title.substring(0,28)+'...':scope.row.title}}
+                <router-link :to="{path:'myshenpint',query:{id:scope.row.approvalOrderId}}">{{scope.row.title.length>28?scope.row.title.substring(0,28)+'...':scope.row.title}}</router-link>
               </div>
             </template>
           </el-table-column>
-          <el-table-column prop="title" label="类别" show-overflow-tooltip>
-            <template slot-scope="scope">
-              <div class="goclick"  @click="godetail(scope.row)">
-                {{scope.row.title.length>28?scope.row.title.substring(0,28)+'...':scope.row.title}}
-              </div>
-            </template>
+          <el-table-column prop="categoryName" label="类别" align="center" width="100" show-overflow-tooltip>
           </el-table-column>
-          <el-table-column prop="publishTime" label="时间" width="180"></el-table-column>
+          <el-table-column prop="addTime" label="时间" width="180"></el-table-column>
         </el-table>
       </div>
     </div>
@@ -54,7 +49,7 @@
                 msg: "",
                 token:"",
                 userId:0,
-                title:" ",
+                title:"",
                 recommendList: [],
                 loading:false,
             };
@@ -69,15 +64,15 @@
             getrecommondList(){
                 this.loading=true;
                 this.axios
-                    .post("/web/user/recommend", {
-                        userId : this.userId,
-                        token: this.token,
+                    .post("/web/approvalorder/list", {
                         current: this.recommendcurrent,
-                        size: this.recommendsize
+                        size: this.recommendsize,
+                        title:this.title
                     })
                     .then(({ data }) => {
                         if(data.code==10001){
                             this.loading=false;
+                            console.log(data.data);
                             this.recommendList = data.data.records;
                             this.recommendtotal = data.data.total;
                             this.recommendcurrent = data.data.current;
@@ -98,8 +93,6 @@
         }
     };
 </script>
-
-
 <style lang="less" scoped>
   .suqiu {
     padding: 20px 0;
@@ -121,6 +114,10 @@
     .goclick{
       cursor: pointer;
       display: inline-block;
+      a:hover{
+        text-decoration:underline;
+        color: #e7390a;
+      }
     }
     .recommendjs {
       padding: 0 20px;
@@ -133,14 +130,6 @@
         font-weight: bold;
         color: #454545;
         margin-right: 38px;
-      }
-      /deep/.el-table td,
-      .el-table th.is-leaf {
-        border-bottom: 1px dashed #d6d6d6;
-      }
-      /deep/.el-table th,
-      .el-table tr {
-        border-bottom: 1px dashed #d6d6d6;
       }
       .shangchuan {
         font-size: 30px;

@@ -356,6 +356,11 @@ export default new Router({
           component:() => import('@/components/mineCenter/shenpi/shenpi')
         },//审批列表
         {
+          path: 'myshenpint',//以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
+          name: 'myshenpiint',
+          component:() => import('@/components/mineCenter/shenpi/myshenpiint')
+        },//审批列表详情
+        {
           path: 'supplypublic',//以“/”开头的嵌套路径会被当作根路径，所以子路由上不用加“/”;在生成路由时，主路由上的path会被自动添加到子路由之前，所以子路由上的path不用在重新声明主路由上的path了。
           name: 'supplypublic',
           component:() => import('@/components/mineCenter/supplypublic/supplypublic'),
