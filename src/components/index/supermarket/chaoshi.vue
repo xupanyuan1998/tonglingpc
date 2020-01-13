@@ -5,7 +5,7 @@
     </div>
     <div class="warp">
       <div class="jin">
-        <h4>金融机构</h4>
+        <h4>信贷服务</h4>
         <ul class="list">
           <li  @click="gozhu">
             <div>
@@ -59,251 +59,140 @@
       </div>
       <div class="jin">
         <h4>创新产品</h4>
-        <ul class="chan">
-          <li>
-            <div class="tit">
-              <img src="../../../../static/images/169.png" alt="">
+        <ul class="ji">
+          <li @click="goji">
+            <div>
+              <img src="../../../../static/images/210.png" alt="">
             </div>
-            <div class="cont">
-              <div class="left">
-                <img src="../../../../static/images/174.png" alt="" @mouseenter="bigimg" @mouseleave="hideimg">
-                <img class="big" src="../../../../static/images/174.png" alt="" >
-              </div>
-              <div class="right">
-                <h5>超e贷</h5>
-                <p>超e贷是铜陵农商银行继贵阳市探索政府数据有序开放后推出的第一款线上消费类信用贷款产品,年利率优化至
-                  5.88%能满足客户不同的消费贷款需求.具有利率优、额度高、支用快、还款活的特点，额度循环使用，随借随还，
-                  客户在芝米钱包上可一键申请，一键放款，真正享受到大数据建设带来的便利。</p>
-                <button @click="place">我要申请</button>
-              </div>
-            </div>
+            <span>积利金增强型(可转积利金)</span>
           </li>
-          <li>
-            <div class="tit">
-              <img src="../../../../static/images/169.png" alt="">
+          <li @click="gowai">
+            <div>
+              <img src="../../../../static/images/210.png" alt="">
             </div>
-            <div class="cont">
-              <div class="left">
-                <img src="../../../../static/images/220.jpg" alt="" @mouseenter="bigimg" @mouseleave="hideimg">
-                <img class="big" src="../../../../static/images/220.jpg" alt="" >
-              </div>
-              <div class="right">
-                <h5>超e贷</h5>
-                <p>超e贷是铜陵农商银行继贵阳市探索政府数据有序开放后推出的第一款线上消费类信用贷款产品,年利率优化至
-                  5.88%能满足客户不同的消费贷款需求.具有利率优、额度高、支用快、还款活的特点，额度循环使用，随借随还，
-                  客户在芝米钱包上可一键申请，一键放款，真正享受到大数据建设带来的便利。</p>
-                <button @click="place">我要申请</button>
-              </div>
-            </div>
+            <span>外汇宝</span>
           </li>
         </ul>
       </div>
       <div class="jin">
       <h4>基金对接</h4>
       <ul class="ji">
-        <li>
+        <li @click="goanhua">
           <div>
             <img src="../../../../static/images/212.png" alt="">
           </div>
-          <span>中欧新蓝筹</span>
+          <span>安徽安华创新风险投资基金</span>
         </li>
-        <li>
+        <li @click="goanyuan">
           <div>
             <img src="../../../../static/images/212.png" alt="">
           </div>
-          <span>国投资源前收费基金</span>
+          <span>安徽安元创新风险投资基金</span>
         </li>
-        <li>
+        <li @click="place">
           <div>
             <img src="../../../../static/images/212.png" alt="">
           </div>
-          <span>中欧新蓝筹</span>
+          <span>安徽新兴产业创业投资基金</span>
         </li>
-        <li>
+        <li @click="place">
           <div>
             <img src="../../../../static/images/212.png" alt="">
           </div>
-          <span>国投资源前收费基金</span>
+          <span>安徽省“三重一创”产业发展基金</span>
         </li>
-        <li>
+        <li @click="place">
           <div>
             <img src="../../../../static/images/212.png" alt="">
           </div>
-          <span>中欧新蓝筹</span>
+          <span>安徽省中小企业（专精特新）发展基金</span>
         </li>
-        <li>
+        <li @click="place">
           <div>
             <img src="../../../../static/images/212.png" alt="">
           </div>
-          <span>国投资源前收费基金</span>
+          <span>安徽省科技成果转化引导基金</span>
         </li>
-        <li class="four">
+        <li @click="place" >
           <div>
             <img src="../../../../static/images/212.png" alt="">
           </div>
-          <span>中欧新蓝筹</span>
-        </li>
-        <li>
-          <div>
-            <img src="../../../../static/images/212.png" alt="">
-          </div>
-          <span>国投资源前收费基金</span>
-        </li>
-        <li>
-          <div>
-            <img src="../../../../static/images/212.png" alt="">
-          </div>
-          <span>中欧新蓝筹</span>
-        </li>
-        <li>
-          <div>
-            <img src="../../../../static/images/212.png" alt="">
-          </div>
-          <span>国投资源前收费基金</span>
-        </li>
-        <li>
-          <div>
-            <img src="../../../../static/images/212.png" alt="">
-          </div>
-          <span>中欧新蓝筹</span>
-        </li>
-        <li>
-          <div>
-            <img src="../../../../static/images/212.png" alt="">
-          </div>
-          <span>国投资源前收费基金</span>
-        </li>
-        <li>
-          <div>
-            <img src="../../../../static/images/212.png" alt="">
-          </div>
-          <span>中欧新蓝筹</span>
-        </li>
-        <li class="four">
-          <div>
-            <img src="../../../../static/images/212.png" alt="">
-          </div>
-          <span>国投资源前收费基金</span>
+          <span>安徽省供销合作发展基金</span>
         </li>
       </ul>
     </div>
       <div class="jin">
         <h4>保险服务</h4>
-        <ul class="bao">
-          <li>
-            <div class="left">
-              <div>
-                <img src="../../../../static/images/221.jpg" alt="">
-              </div>
-              <span>雇主责任险</span>
+        <ul class="baoc">
+          <li @click="gobaoc">
+            <div>
+              <img src="../../../../static/images/235.png" alt="">
             </div>
-            <p class="right">保障雇员在工作期间发生意外以及职业性疾病导致的身故、伤残、医疗费用；
-              提供员工暂时丧失劳动能力期间的误工津贴保障；
-              可扩展非工作期间的意外伤害保障；
-              最多可同时为300人投保，人数越多保费越优惠；
-              转嫁雇主的法律责任，免除雇主后顾之忧；</p>
+            <span>太平洋保险股份有限公司</span>
           </li>
-          <li class="four">
-            <div class="left">
-              <div>
-                <img src="../../../../static/images/222.jpg" alt="">
-              </div>
-
-              <span>万创保</span>
+          <li @click="goguoyuan">
+            <div>
+              <img src="../../../../static/chao/1.jpg" alt="">
             </div>
-            <p class="right">万创保 专门为住宿业、零售业、批发业、餐饮业、商务服务业五大
-              行业中小企业量身定做的一款组合保险产品，保障全面，范围涵盖企业财产、雇主及其家
-              人和员工的意外、健康，还可转嫁雇主和企业的多种法律责任风险。中小企业通过保险即可获得大企业的保障！</p>
-          </li>
-          <li>
-            <div class="left">
-              <div>
-                <img src="../../../../static/images/223.jpg" alt="">
-              </div>
-              <span>金福保</span>
-            </div>
-            <p class="right">为中小餐饮业量身定做的保险产品，保障全面，经营更安心。店内发生火
-              灾、盗窃、抢劫，店内存货因水管爆裂受损，顾客摔伤、烫伤、食品中毒，雇员伤亡，均在保障范围。一险在手，后顾无忧！</p>
-          </li>
-          <li class="four">
-            <div class="left">
-              <div>
-                <img src="../../../../static/images/224.jpg" alt="">
-              </div>
-              <span>企财险</span>
-            </div>
-            <p class="right">企业财产保险简称“企财险”，为企事业单位存放在指定地点的财产物资提供保障。
-              针对保险责任范围内的自然灾害或意外事故造成的损失，中国人寿财险将进行赔偿，协助您尽可能降低损失。</p>
+            <span>国元农业保险股份有限公司</span>
           </li>
         </ul>
       </div>
       <div class="jin">
         <h4>上市服务</h4>
        <ul class="shang">
-         <li>
+         <li @click="godf">
            <div>
-             <img src="../../../../static/images/225.jpg" alt="">
+             <img src="../../../../static/chao/4.jpg" alt="">
            </div>
-           <span>上市辅导</span>
+           <span>铜陵东方会计师事务所</span>
          </li>
-         <li>
+         <li @click="goyc">
            <div>
-             <img src="../../../../static/images/226.jpg" alt="">
+             <img src="../../../../static/chao/3.jpg" alt="">
            </div>
-           <span>律师服务</span>
-         </li>
-         <li>
-         <div>
-           <img src="../../../../static/images/227.jpg" alt="">
-         </div>
-           <span>会计师服务</span>
+           <span>铜陵永昌会计师事务所</span>
          </li>
        </ul>
       </div>
       <div class="jin">
         <h4>担保服务</h4>
         <ul class="ji">
-          <li>
+          <li @click="goandan">
             <div>
-              <img src="../../../../static/images/212.png" alt="">
+              <img src="../../../../static/chao/15.png" alt="">
             </div>
-            <span>中欧新蓝筹</span>
+            <span>安徽省信用担保集团</span>
           </li>
-          <li>
+          <li @click="gotongl">
             <div>
-              <img src="../../../../static/images/212.png" alt="">
+              <img src="../../../../static/chao/3.jpg" alt="">
             </div>
-            <span>国投资源前收费基金</span>
+            <span>铜陵市担保控股集团有限公司</span>
           </li>
-          <li>
+          <li @click="place">
             <div>
-              <img src="../../../../static/images/212.png" alt="">
+              <img src="../../../../static/chao/3.jpg" alt="">
             </div>
-            <span>中欧新蓝筹</span>
+            <span>铜陵市中源信用担保公司</span>
           </li>
-          <li>
+          <li @click="place">
             <div>
-              <img src="../../../../static/images/212.png" alt="">
+              <img src="../../../../static/chao/3.jpg" alt="">
             </div>
-            <span>国投资源前收费基金</span>
+            <span>国元担保</span>
           </li>
-          <li>
+          <li @click="place">
             <div>
-              <img src="../../../../static/images/212.png" alt="">
+              <img src="../../../../static/chao/3.jpg" alt="">
             </div>
-            <span>中欧新蓝筹</span>
+            <span>铜陵金誉中小企业信用担保中心</span>
           </li>
-          <li>
+          <li @click="place">
             <div>
-              <img src="../../../../static/images/212.png" alt="">
+              <img src="../../../../static/chao/3.jpg" alt="">
             </div>
-            <span>国投资源前收费基金</span>
-          </li>
-          <li class="four">
-            <div>
-              <img src="../../../../static/images/212.png" alt="">
-            </div>
-            <span>中欧新蓝筹</span>
+            <span>铜陵市住房置业担保中心</span>
           </li>
         </ul>
       </div>
@@ -338,9 +227,48 @@
       }
     },
     methods:{
+        gobaoc(){
+            this.$router.push('/baoc')
+        },
       gozhu(){
         this.$router.push('/bank')
       },
+        //国元保险详情页面
+        goguoyuan(){
+            this.$router.push('/guoyuan')
+        },
+        //安华基金详情
+        goanhua(){
+            this.$router.push('/anhua')
+        },
+        //安元基金详情
+        goanyuan(){
+            this.$router.push('/anyuan')
+        },
+        //铜陵市担保控股集团有限公司详情
+        gotongl(){
+            this.$router.push('/tongl')
+        },
+        //安徽信用担保集团
+        goandan(){
+            this.$router.push('/andan')
+        },
+        //铜陵永昌会计师事务所
+        goyc(){
+            this.$router.push('/yongchang')
+        },
+        //铜陵东方会计师事务所
+        godf(){
+            this.$router.push('/dongfang')
+        },
+        //积利金
+        goji(){
+           this.$router.push('/jili');
+        },
+        //外汇宝
+        gowai(){
+            this.$router.push('/waihui');
+        },
       place(){
         this.placeshow=true;
       },
@@ -433,7 +361,6 @@
             position: relative;
             img{
               width: 122px;
-              height: 156px;
             }
             img.big{
               display: none;
@@ -441,7 +368,6 @@
               right: -330px;
               top: 40px;
               width:244px;
-              height:312px ;
               z-index: 999;
             }
           }
@@ -486,6 +412,9 @@
       }
     }
     ul{
+      li{
+        cursor: pointer;
+      }
       li.four{
         margin-right: 0;
       }
@@ -494,22 +423,21 @@
       padding: 20px;
       overflow: hidden;
       li{
-        width: 130px;
-        height: 130px;
+        width: 200px;
         float: left;
-        margin-right: 40px;
+        margin-right: 30px;
         margin-bottom: 20px;
         div{
           display: block;
-          width: 90px;
-          height: 90px;
+          width: 120px;
+          height: 120px;
           margin: 0 auto;
           overflow: hidden;
         }
         img{
           display: block;
-          width: 90px;
-          height: 90px;
+          width: 100%;
+          height: 100%;
           transition: all 0.5s;
         }
         div:hover{
@@ -522,9 +450,11 @@
           display: block;
           line-height: 30px;
           width: 100%;
-          height: 30px;
+          height: 60px;
           overflow: hidden;
           text-align: center;
+          font-size: 16px;
+          font-weight: bold;
         }
       }
     }
@@ -579,12 +509,49 @@
         }
       }
     }
+    .baoc{
+      padding: 20px;
+      overflow: hidden;
+      li:hover{
+        img{
+          transform: scale(1.1);
+        }
+      }
+      li{
+        width: 200px;
+        height: 150px;
+        float: left;
+        margin-right: 30px;
+        div{
+          overflow: hidden;
+          img{
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            transition: all 0.3s;
+          }
+        }
+        span{
+          display: block;
+          width: 100%;
+          padding: 10px 0;
+          height: 30px;
+          line-height: 30px;
+          font-size: 16px;
+          font-weight: 700;
+          color: #1a1a1a;
+          text-align: center;
+        }
+      }
+    }
     .shang{
       padding: 20px;
       overflow: hidden;
       li{
         width:180px;
         height: 190px;
+        margin-right: 50px;
         float: left;
         div{
           width: 150px;
@@ -606,11 +573,11 @@
         span{
           margin-top: 10px;
           display: block;
-          height: 30px;
+          height: 60px;
           line-height: 30px;
-          font-size: 18px;
-          font-weight: 500;
+          font-size: 16px;
           text-align: center;
+          font-weight: bold;
         }
       }
     }

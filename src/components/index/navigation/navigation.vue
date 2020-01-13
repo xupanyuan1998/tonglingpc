@@ -57,7 +57,7 @@
       <div class="footer">
         <footer-nav></footer-nav>
       </div>
-      <place  :placeshow="placeshow"  @hide="placeshow = false" ></place>
+      <place  :placeshow="placeshow"  @hide="placeshow = false" :success="success" :errorshow="plas"></place>
     </div>
 </template>
 
@@ -74,9 +74,18 @@
           return {
             toptitle:'铜陵市民营经济云服务智慧平台',
             clectnav: 3,
-            placeshow:false
+            placeshow:false,
+              success:2,
+              plas:'',
+              token:'',
+              personal:'',
           }
       },
+        created(){
+            var a=localStorage.getItem('token');
+            this.token=a;
+            this.personal=JSON.parse(localStorage.getItem('personal'));
+        },
       methods:{
           //各部门政策
           gozhinan(){
@@ -101,42 +110,70 @@
           window.open('http://tl.ahzwfw.gov.cn/bog-bsdt/static/workProcess/components/servicesList.html?subjecttype=C&parentItemtypeName=%u516C%u53F8%u5907%u6848&itemtypeName=%u673A%u6784%u5907%u6848&itemtypeType=GBDFFRGSBA&itemtypeCode=60','_blank');
         },
         jiu(){
-          var a=localStorage.getItem('token');
-          if(a==null){
+          if(this.token==null){
             this.placeshow=true;
+            this.success=2;
           }else{
-            this.$router.push({
-              path:'/shenpi',
-              query:{
-                id:0
+              if(this.personal.roleId>1){
+                  this.placeshow=true;
+                  this.success=5;
+                  this.plas='此页面只提供给企业！！！'
+              }else{
+                  this.$router.push({
+                      path:'/shenpi',
+                      query:{
+                          id:0
+                      }
+                  })
               }
-            })
+
           }
         },
         zi(){
-          var a=localStorage.getItem('token');
-          if(a==null){
-            this.placeshow=true;
+          if(this.token==null){
+              this.placeshow=true;
+              this.success=2;
           }else{
-            this.$router.push({
-              path:'/shenpi',
-              query:{
-                id:1
+              if(this.personal.roleId>1){
+                  this.placeshow=true;
+                  this.success=5;
+                  this.plas='此页面只提供给企业！！！'
+              }else{
+                  if(this.personal.roleId>1){
+                      this.placeshow=true;
+                      this.success=5;
+                      this.plas='此页面只提供给企业！！！'
+                  }else{
+                      this.$router.push({
+                          path:'/shenpi',
+                          query:{
+                              id:1
+                          }
+                      })
+                  }
+
               }
-            })
+
           }
         },
         shen(){
-            var a=localStorage.getItem('token');
-            if(a==null){
+            if(this.token==null){
               this.placeshow=true;
+                this.success=2;
             }else{
-              this.$router.push({
-                path:'/shenpi',
-                query:{
-                  id:2
+                if(this.personal.roleId>1){
+                    this.placeshow=true;
+                    this.success=5;
+                    this.plas='此页面只提供给企业！！！'
+                }else{
+                    this.$router.push({
+                        path:'/shenpi',
+                        query:{
+                            id:2
+                        }
+                    })
                 }
-              })
+
             }
 
         }

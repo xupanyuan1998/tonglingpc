@@ -128,57 +128,26 @@
                 userId: "",
                 dingyue: [
                     // { name: "推荐", active: false },
-                    { name: "消息", active: false },
+                    { name: "消息", active: false ,url:'news'},
                     // { name: "订阅", active: false },
-                    { name: "收藏", active: false }
+                    { name: "收藏", active: false,url:'shoucang' }
                 ], //我的订阅
-                online: [
-                    {
-                        src: "../../../static/images/84.png",
-                        name: "在线诉求",
-                        active: false
-                    },
-                    {
-                        src: "../../../static/images/85.png",
-                        name: "重点推荐",
-                        active: false
-                    }
-                ],
-                server: [
-                    //企业服务
-                    {
-                        src: "../../../static/images/88.png",
-                        name: "产品管理",
-                        active: false
-                    },
-                    {
-                        src: "../../../static/images/89.png",
-                        name: "供需发布",
-                        active: false
-                    },
-                    {
-                        src: "../../../static/images/90.png",
-                        name: "企业资质",
-                        active: false
-                    },
-                    {
-                        src: "../../../static/images/88.png",
-                        name: "朋友圈",
-                        active: false
-                    }
-                ],
+                online: [],
+                server: [],
                 mymsg: [
                     {
                         src: "../../../static/images/186.png",
                       activeSrc:'../../../static/images/194.png',
                         name: "身份认证",
-                        active: false
+                        active: false,
+                        url:'faren'
                     },
                     {
                         src: "../../../static/images/187.png",
                       activeSrc:'../../../static/images/195.png',
                         name: "修改密码",
-                        active: false
+                        active: false,
+                        url:'setpassword'
                     }
                 ],
                 workId: "",
@@ -201,26 +170,36 @@
                     this.mymsg[1].active=true;
                   this.$router.push('/personal/setpassword')
                   }
-                
+
               } else if (this.msg.roleId == 1) {
                 this. online=[
                   {
                     src: "../../../static/images/181.png",
                     activeSrc:'../../../static/images/188.png',
                     name: "重点政策推荐",
-                    active: false
+                    active: false,
+                      url:'importanttuijian'
                   },{
                     src: "../../../static/images/189.png",
                     activeSrc:'../../../static/images/196.png',
                     name: "经验推荐",
-                    active: false
+                    active: false,
+                        url:'jingyang'
                   },
                   {
                     src: "../../../static/images/182.png",
                     activeSrc:'../../../static/images/190.png',
                     name: "信息之窗",
-                    active: false
+                    active: false,
+                      url:'friend'
                   },
+                    {
+                        src: "../../../static/images/247.png",
+                        activeSrc:'../../../static/images/248.png',
+                        name: "审批服务",
+                        active: false,
+                        url:'myshenpi'
+                    }
                 ],
                   this.server = [
                     //企业服务
@@ -228,19 +207,22 @@
                       src: "../../../static/images/183.png",
                       activeSrc:'../../../static/images/191.png',
                       name: "产品管理",
-                      active: false
+                      active: false,
+                        url:'administration'
                     },
                     {
                       src: "../../../static/images/184.png",
                       activeSrc:'../../../static/images/192.png',
                       name: "供需发布",
-                      active: false
+                      active: false,
+                        url:'supplypublic'
                     },
                     {
                       src: "../../../static/images/185.png",
                       activeSrc:'../../../static/images/197.png',
                       name: "企业资质",
-                      active: false
+                      active: false,
+                        url:'enterprisezizhi'
                     },
 
                   ];
@@ -260,7 +242,8 @@
                       src: "../../../static/images/187.png",
                       activeSrc:'../../../static/images/195.png',
                       name: "修改密码",
-                      active: false
+                      active: false,
+                        url:'setpassword'
                     }
                   ];
                 this.mymsg[0].active=true;
@@ -272,37 +255,43 @@
                     src: "../../../static/images/199.png",
                     activeSrc:'../../../static/images/200.png',
                     name: "企业建档统计",
-                    active: false
+                    active: false,
+                      url:'tableJd'
                   },
                   {
                     src: "../../../static/images/201.png",
                     activeSrc:'../../../static/images/202.png',
                     name: "企业活跃统计",
-                    active: false
+                    active: false,
+                      url:'tableQyhy'
                   },
                   {
                     src: "../../../static/images/204.png",
                     activeSrc:'../../../static/images/203.png',
                     name: "网站内容统计",
-                    active: false
+                    active: false,
+                      url:'tableWznr'
                   },
                   {
                     src: "../../../static/images/205.png",
                     activeSrc:'../../../static/images/206.png',
                     name: "政策发布效果统计",
-                    active: false
+                    active: false,
+                      url:''
                   },
                   {
                     src: "../../../static/images/207.png",
                     activeSrc:'../../../static/images/208.png',
                     name: "为企服务评分统计",
-                    active: false
+                    active: false,
+                      url:'tableFa'
                   },
                   {
                     src: "../../../static/images/232.png",
                     activeSrc:'../../../static/images/231.png',
                     name: "注册资金统计",
-                    active: false
+                    active: false,
+                      url:'zijin'
                   }
                 ];
                 this.server=[];
@@ -311,13 +300,14 @@
                     src: "../../../static/images/187.png",
                     activeSrc:'../../../static/images/195.png',
                     name: "修改密码",
-                    active: false
+                    active: false,
+                      url:'setpassword'
                   }
                 ];
                 this.shuju[0].active=true;
                 this.$router.push('/personal/tableJd')
               }
-              
+
         },
         beforeCreate(){
             this.token = localStorage.getItem("token");
@@ -328,74 +318,27 @@
             }
         },
         methods: {
-            xuanz(item){
+            xuanz(item) {
                 var _this = this;
-                document.documentElement.scrollTop=0;
+                document.documentElement.scrollTop = 0;
                 //清除左侧列表的选中效果
-                this.dingyue.forEach(function(item) {
+                this.dingyue.forEach(function (item) {
                     _this.$set(item, "active", false);
                 });
-                this.online.forEach(function(item) {
+                this.online.forEach(function (item) {
                     _this.$set(item, "active", false);
                 });
-                this.server.forEach(function(item) {
+                this.server.forEach(function (item) {
                     _this.$set(item, "active", false);
                 });
-                this.mymsg.forEach(function(item) {
+                this.mymsg.forEach(function (item) {
                     _this.$set(item, "active", false);
                 });
-              this.shuju.forEach(function(item) {
-                _this.$set(item, "active", false);
-              });
+                this.shuju.forEach(function (item) {
+                    _this.$set(item, "active", false);
+                });
                 this.$set(item, "active", true);
-                if (item.name === "收藏") {
-                  this.$router.push('shoucang')
-                }
-                if (item.name === "消息") {
-                  this.$router.push('news')
-                }
-                if (item.name === "供需发布") {
-                  this.$router.push('supplypublic')
-                }
-                if (item.name === "产品管理") {
-                  this.$router.push('administration')
-                }
-                if (item.name === "身份认证") {
-                  this.$router.push('faren')
-                }
-                if (item.name === "修改密码") {
-                  this.$router.push('setpassword')
-                }
-                if (item.name === "企业资质") {
-                  this.$router.push('enterprisezizhi')
-                }
-                if (item.name === "重点政策推荐") {
-                  this.$router.push('importanttuijian')
-                }
-                if(item.name==='信息之窗'){
-                  this.$router.push('friend')
-                }
-                if(item.name=='经验推荐'){
-                  this.$router.push('jingyang')
-                }
-              if(item.name=='企业建档统计'){
-                this.$router.push('tableJd')
-              }
-              if(item.name=='企业活跃统计'){
-                this.$router.push('tableQyhy')
-              }
-              if(item.name=='网站内容统计'){
-                this.$router.push('tableWznr')
-              }
-              if(item.name=='政策发布效果统计'){
-                this.$router.push('tableFa')
-              }
-              if(item.name=='为企服务评分统计'){
-                this.$router.push('stars')
-              }
-              if(item.name=='注册资金统计'){
-                this.$router.push('zijin')
-              }
+                this.$router.push(item.url);
             },
             //设置active=false
             actives(arr){

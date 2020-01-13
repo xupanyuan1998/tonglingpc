@@ -165,7 +165,8 @@
       </div>
       <!--      banner-->
       <div class="beitong">
-        <img src="../../static/images/43.png" alt="">
+        <img src="../../static/chao/36.png" alt="">
+        <img style="float: right" src="../../static/chao/37.png" alt="" @click="goserverFour">
       </div>
       <ul class="tongji">
         <li>
@@ -484,6 +485,10 @@
       clearInterval(this.timer);
     },
     methods: {
+        //四送一服页面
+        goserverFour(){
+           this.$router.push('/sisone')
+        },
       scroll(){
         let con1 = this.$refs.con1;
         con1.style.marginTop='-40px';
@@ -928,8 +933,9 @@
     margin-top: 10px;
     img{
       display: block;
-      width: 100%;
-      height: 100px;
+      float: left;
+      width: 580px;
+      height: 64px;
       cursor: pointer;
     }
   }

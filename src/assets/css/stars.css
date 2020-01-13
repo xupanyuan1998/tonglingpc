@@ -1,0 +1,13 @@
+
+.el-rate__icon{
+  font-size: 40px !important;
+}
+.el-rate__text{
+  font-size: 20px !important;
+  margin-left: 20px;
+}
+.stars{
+  height: 40px;
+  padding: 20px;
+  text-align: center;
+}
